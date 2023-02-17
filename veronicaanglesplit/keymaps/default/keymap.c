@@ -3,16 +3,18 @@
 
 #include QMK_KEYBOARD_H
 
+#ifdef TAP_DANCE_ENABLE
 //Tap Dance declarations
-//enum {
-    //TD_ESC_DEL = 0,
-//};
+enum {
+    TD_ESC_DEL = 0,
+};
 
 // Tap Dance definitions
-//qk_tap_dance_action_t tap_dance_actions[] = {
+qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for DEL
-    //[TD_ESC_DEL] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_DEL),
-//};
+    [TD_ESC_DEL] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_DEL),
+};
+#endif
 
 enum combo_events {
   COMBO_DEL
@@ -30,14 +32,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  _______, _______, _______, _______,                KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_QUOT,
         _______, _______, _______, _______, _______,                KC_TILD, KC_GRV,  _______, _______, KC_BSLS,
             _______,      _______, _______,            _______,              _______, _______, _______
-                                                                
+
     ),
     [2] = LAYOUT(
         KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
         _______, _______, _______, _______, _______,                _______, _______, _______, _______, _______,
         _______, _______, KC_MUTE, KC_VOLU, KC_VOLD,                RGB_TOG, RGB_MODE_FORWARD, _______, _______, _______,
             _______,      _______, _______,            _______,              _______, _______, _______
-        
+
     ),
     [3] = LAYOUT(
         _______, KC_UP,   _______, _______, _______,                 KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,
@@ -48,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_del[] = {KC_Y, KC_H, COMBO_END}
+const uint16_t PROGMEM combo_del[] = {KC_Y, KC_H, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [COMBO_DEL] = COMBO(combo_del,KC_DEL)
