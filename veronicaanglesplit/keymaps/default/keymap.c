@@ -3,16 +3,18 @@
 
 #include QMK_KEYBOARD_H
 
+#ifdef TAP_DANCE_ENABLE
 //Tap Dance declarations
-//enum {
-    //TD_ESC_DEL = 0,
-//};
+enum {
+    TD_ESC_DEL = 0,
+};
 
 // Tap Dance definitions
-//qk_tap_dance_action_t tap_dance_actions[] = {
+qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for DEL
-    //[TD_ESC_DEL] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_DEL),
-//};
+    [TD_ESC_DEL] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_DEL),
+};
+#endif
 
 enum combo_events {
   COMBO_DEL
