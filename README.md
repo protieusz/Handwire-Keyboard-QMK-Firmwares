@@ -3,7 +3,7 @@
 Future to dos include the case body and bottom plate.
 
 Version 1 product
-Inspiriation and guidance taken from Somepin's Qalable design and Le Chiffre.
+Inspiriation and guidance taken from Somepin's Qalable https://github.com/somepin/la-lettre design and Le Chiffre.
 ![IMG_7952](https://user-images.githubusercontent.com/118025702/219560869-a609d9ca-855e-4f66-b268-4fde9991009b.JPG)
 
 Initial Wiring
