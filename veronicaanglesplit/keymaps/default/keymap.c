@@ -53,6 +53,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM combo_del[] = {KC_Y, KC_H, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  [COMBO_DEL] = COMBO(combo_del,KC_DEL)
+  COMBO(combo_del,KC_DEL)
 };
 #endif
